@@ -17,102 +17,50 @@ class _InputPageState extends State<InputPage> {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: <Widget>[
-            Row(
-              children: <Widget>[
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Color(0xFF1C2033),
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text('ICON'),
-                        Text('male'),
-                      ],
-                    ),
+            Expanded(
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: ReusableCard(colour: Color(0xFF1C2033)),
                   ),
-                ),
-                SizedBox(
-                  width: 8.0,
-                ),
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: Color(0xFF1C2033),
-                        borderRadius: BorderRadius.circular(10.0)),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text('ICON'),
-                        Text('female'),
-                      ],
-                    ),
+                  SizedBox(
+                    width: 8.0,
                   ),
-                )
-              ],
+                  Expanded(
+                    child: ReusableCard(colour: Color(0xFF1C2033)),
+                  )
+                ],
+              ),
             ),
             SizedBox(
               height: 20.0,
             ),
-            Row(
-              children: <Widget>[
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Color(0xFF1C2033),
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text('HEIGHT'),
-                        Text('180cm'),
-                      ],
-                    ),
+            Expanded(
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: ReusableCard(colour: Color(0xFF1C2033)),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             SizedBox(
               height: 20.0,
             ),
-            Row(
-              children: <Widget>[
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Color(0xFF1C2033),
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text('ICON'),
-                        Text('male'),
-                      ],
-                    ),
+            Expanded(
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: ReusableCard(colour: Color(0xFF1C2033)),
                   ),
-                ),
-                SizedBox(
-                  width: 8.0,
-                ),
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: Color(0xFF1C2033),
-                        borderRadius: BorderRadius.circular(10.0)),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text('ICON'),
-                        Text('female'),
-                      ],
-                    ),
+                  SizedBox(
+                    width: 8.0,
                   ),
-                )
-              ],
+                  Expanded(
+                    child: ReusableCard(colour: Color(0xFF1C2033)),
+                  )
+                ],
+              ),
             ),
           ],
         ),
@@ -143,6 +91,22 @@ class _InputPageState extends State<InputPage> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class ReusableCard extends StatelessWidget {
+  final Color colour;
+  ReusableCard({@required this.colour});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: colour,
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      child: null,
     );
   }
 }
