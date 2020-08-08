@@ -117,6 +117,32 @@ class _InputPageState extends State<InputPage> {
           ],
         ),
       ),
+      bottomNavigationBar: SizedBox(
+        height: 100.0,
+        width: double.infinity,
+        child: RaisedButton(
+          padding: EdgeInsets.all(0.0),
+          onPressed: null,
+          child: Container(
+            width: double.infinity,
+            height: double.infinity,
+            padding: EdgeInsets.all(0.0),
+            decoration: BoxDecoration(
+              color: Colors.pink,
+            ),
+            child: Center(
+              child: Text(
+                'CALCULATE  YOUR  BMI',
+                style: TextStyle(
+                  fontSize: 20.0,
+                  letterSpacing: 1.5,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
