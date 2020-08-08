@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         primaryColor: Color(0xFF0A0E23),
         scaffoldBackgroundColor: Color(0xFF0A0E23),
+        canvasColor: Colors.pink,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: InputPage(),
