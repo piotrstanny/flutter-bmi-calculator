@@ -9,9 +9,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+      theme: ThemeData.dark().copyWith(
+        primaryColor: Color(0xFF0A0E23),
+        scaffoldBackgroundColor: Color(0xFF0A0E23),
       ),
       home: InputPage(),
     );
@@ -33,9 +33,6 @@ class _InputPageState extends State<InputPage> {
       ),
       body: Center(
         child: Text('Body text'),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
       ),
     );
   }
