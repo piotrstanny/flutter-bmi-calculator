@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'reusable_card.dart';
+import 'icon_content.dart';
 
 const activeCardColour = Color(0xFF1C2033);
 const bottomBarColour = Colors.pink;
 const bottomBarHeight = 100.0;
-const textColour1 = Color(0xFF8D8E98);
-const mainFontSize = 20.0;
 
 class InputPage extends StatefulWidget {
   @override
@@ -92,7 +92,7 @@ class _InputPageState extends State<InputPage> {
               child: Text(
                 'CALCULATE  YOUR  BMI',
                 style: TextStyle(
-                  fontSize: mainFontSize,
+                  fontSize: 20.0,
                   letterSpacing: 1.5,
                   color: Colors.white,
                 ),
@@ -101,55 +101,6 @@ class _InputPageState extends State<InputPage> {
           ),
         ),
       ),
-    );
-  }
-}
-
-class IconContent extends StatelessWidget {
-  final IconData faicon;
-  final String iconText;
-  IconContent(this.faicon, this.iconText);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Icon(
-          faicon,
-          color: textColour1,
-          size: 90.0,
-        ),
-        SizedBox(
-          height: 10.0,
-        ),
-        Text(
-          iconText,
-          style: TextStyle(
-            fontSize: mainFontSize,
-            color: textColour1,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 1.5,
-          ),
-        )
-      ],
-    );
-  }
-}
-
-class ReusableCard extends StatelessWidget {
-  final Color colour;
-  final Widget cardChild;
-  ReusableCard({@required this.colour, this.cardChild});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: colour,
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-      child: cardChild,
     );
   }
 }
