@@ -30,35 +30,17 @@ class _InputPageState extends State<InputPage> {
                   Expanded(
                     child: ReusableCard(
                       colour: activeCardColour,
-                      cardChild: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Icon(
-                            FontAwesomeIcons.mars,
-                            color: textColour1,
-                            size: 90.0,
-                          ),
-                          SizedBox(
-                            height: 10.0,
-                          ),
-                          Text(
-                            'MALE',
-                            style: TextStyle(
-                              fontSize: mainFontSize,
-                              color: textColour1,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: 1.5,
-                            ),
-                          )
-                        ],
-                      ),
+                      cardChild: IconContent(FontAwesomeIcons.mars, 'MALE'),
                     ),
                   ),
                   SizedBox(
                     width: 8.0,
                   ),
                   Expanded(
-                    child: ReusableCard(colour: activeCardColour),
+                    child: ReusableCard(
+                      colour: activeCardColour,
+                      cardChild: IconContent(FontAwesomeIcons.venus, 'FEMALE'),
+                    ),
                   )
                 ],
               ),
@@ -119,6 +101,38 @@ class _InputPageState extends State<InputPage> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class IconContent extends StatelessWidget {
+  final IconData faicon;
+  final String iconText;
+  IconContent(this.faicon, this.iconText);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Icon(
+          faicon,
+          color: textColour1,
+          size: 90.0,
+        ),
+        SizedBox(
+          height: 10.0,
+        ),
+        Text(
+          iconText,
+          style: TextStyle(
+            fontSize: mainFontSize,
+            color: textColour1,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 1.5,
+          ),
+        )
+      ],
     );
   }
 }
