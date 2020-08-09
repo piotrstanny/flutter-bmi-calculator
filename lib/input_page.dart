@@ -72,9 +72,6 @@ class _InputPageState extends State<InputPage> {
           padding: EdgeInsets.all(0.0),
           onPressed: null,
           child: Container(
-            width: double.infinity,
-            height: double.infinity,
-            padding: EdgeInsets.all(0.0),
             decoration: BoxDecoration(
               color: Colors.pink,
             ),
