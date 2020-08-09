@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+const activeCardColour = Color(0xFF1C2033);
+const bottomBarColour = Colors.pink;
+const bottomBarHeight = 100.0;
+
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
@@ -21,13 +25,13 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    child: ReusableCard(colour: Color(0xFF1C2033)),
+                    child: ReusableCard(colour: activeCardColour),
                   ),
                   SizedBox(
                     width: 8.0,
                   ),
                   Expanded(
-                    child: ReusableCard(colour: Color(0xFF1C2033)),
+                    child: ReusableCard(colour: activeCardColour),
                   )
                 ],
               ),
@@ -39,7 +43,7 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    child: ReusableCard(colour: Color(0xFF1C2033)),
+                    child: ReusableCard(colour: activeCardColour),
                   ),
                 ],
               ),
@@ -51,13 +55,13 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    child: ReusableCard(colour: Color(0xFF1C2033)),
+                    child: ReusableCard(colour: activeCardColour),
                   ),
                   SizedBox(
                     width: 8.0,
                   ),
                   Expanded(
-                    child: ReusableCard(colour: Color(0xFF1C2033)),
+                    child: ReusableCard(colour: activeCardColour),
                   )
                 ],
               ),
@@ -66,14 +70,14 @@ class _InputPageState extends State<InputPage> {
         ),
       ),
       bottomNavigationBar: SizedBox(
-        height: 100.0,
+        height: bottomBarHeight,
         width: double.infinity,
         child: RaisedButton(
           padding: EdgeInsets.all(0.0),
           onPressed: null,
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.pink,
+              color: bottomBarColour,
             ),
             child: Center(
               child: Text(
