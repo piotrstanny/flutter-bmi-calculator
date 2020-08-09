@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 const activeCardColour = Color(0xFF1C2033);
 const bottomBarColour = Colors.pink;
 const bottomBarHeight = 100.0;
+const textColour1 = Color(0xFF8D8E98);
+const mainFontSize = 20.0;
 
 class InputPage extends StatefulWidget {
   @override
@@ -25,7 +28,31 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    child: ReusableCard(colour: activeCardColour),
+                    child: ReusableCard(
+                      colour: activeCardColour,
+                      cardChild: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(
+                            FontAwesomeIcons.mars,
+                            color: textColour1,
+                            size: 90.0,
+                          ),
+                          SizedBox(
+                            height: 10.0,
+                          ),
+                          Text(
+                            'MALE',
+                            style: TextStyle(
+                              fontSize: mainFontSize,
+                              color: textColour1,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1.5,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
                   ),
                   SizedBox(
                     width: 8.0,
@@ -83,7 +110,7 @@ class _InputPageState extends State<InputPage> {
               child: Text(
                 'CALCULATE  YOUR  BMI',
                 style: TextStyle(
-                  fontSize: 20.0,
+                  fontSize: mainFontSize,
                   letterSpacing: 1.5,
                   color: Colors.white,
                 ),
