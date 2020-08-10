@@ -4,6 +4,9 @@ import 'reusable_card.dart';
 import 'icon_content.dart';
 
 const activeCardColour = Color(0xFF1C2033);
+const inactiveCardColour = Color(0xFF131528);
+const activeTextColour = Colors.white;
+const inactiveTextColour = Color(0xFF797b84);
 const bottomBarColour = Colors.pink;
 const bottomBarHeight = 100.0;
 
@@ -28,9 +31,13 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    child: ReusableCard(
-                      colour: activeCardColour,
-                      cardChild: IconContent(FontAwesomeIcons.mars, 'MALE'),
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: ReusableCard(
+                        colour: inactiveCardColour,
+                        cardChild: IconContent(
+                            FontAwesomeIcons.mars, 'MALE', inactiveTextColour),
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -39,7 +46,8 @@ class _InputPageState extends State<InputPage> {
                   Expanded(
                     child: ReusableCard(
                       colour: activeCardColour,
-                      cardChild: IconContent(FontAwesomeIcons.venus, 'FEMALE'),
+                      cardChild: IconContent(
+                          FontAwesomeIcons.venus, 'FEMALE', activeTextColour),
                     ),
                   )
                 ],

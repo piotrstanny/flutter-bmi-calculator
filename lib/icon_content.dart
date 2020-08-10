@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class IconContent extends StatelessWidget {
   final IconData faicon;
   final String iconText;
-  IconContent(this.faicon, this.iconText);
+  final Color textColour;
+  IconContent(this.faicon, this.iconText, this.textColour);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class IconContent extends StatelessWidget {
       children: <Widget>[
         Icon(
           faicon,
-          color: Color(0xFF8D8E98),
+          color: textColour,
           size: 90.0,
         ),
         SizedBox(
@@ -22,7 +23,7 @@ class IconContent extends StatelessWidget {
           iconText,
           style: TextStyle(
             fontSize: 20.0,
-            color: Color(0xFF8D8E98),
+            color: textColour,
             fontWeight: FontWeight.bold,
             letterSpacing: 1.5,
           ),
