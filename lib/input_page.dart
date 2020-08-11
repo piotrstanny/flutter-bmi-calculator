@@ -15,31 +15,14 @@ enum Gender {
   male,
 }
 
+Gender selectedGender = Gender.female;
+
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
 }
 
 class _InputPageState extends State<InputPage> {
-  Color maleCardColour = inactiveCardColour;
-  Color femaleCardColour = activeCardColour;
-  Color maleTextColour = inactiveTextColour;
-  Color femaleTextColour = activeTextColour;
-
-  void updateColour(Gender gender) {
-    if (gender == Gender.male) {
-      maleCardColour = activeCardColour;
-      maleTextColour = activeTextColour;
-      femaleCardColour = inactiveCardColour;
-      femaleTextColour = inactiveTextColour;
-    } else if (gender == Gender.female) {
-      maleCardColour = inactiveCardColour;
-      maleTextColour = inactiveTextColour;
-      femaleCardColour = activeCardColour;
-      femaleTextColour = activeTextColour;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called
@@ -58,13 +41,19 @@ class _InputPageState extends State<InputPage> {
                     child: GestureDetector(
                       onTap: () {
                         setState(() {
-                          updateColour(Gender.male);
+                          selectedGender = Gender.male;
                         });
                       },
                       child: ReusableCard(
-                        colour: maleCardColour,
+                        colour: selectedGender == Gender.male
+                            ? activeCardColour
+                            : inactiveCardColour,
                         cardChild: IconContent(
-                            FontAwesomeIcons.mars, 'MALE', maleTextColour),
+                            FontAwesomeIcons.mars,
+                            'MALE',
+                            selectedGender == Gender.male
+                                ? activeTextColour
+                                : inactiveTextColour),
                       ),
                     ),
                   ),
@@ -75,13 +64,19 @@ class _InputPageState extends State<InputPage> {
                     child: GestureDetector(
                       onTap: () {
                         setState(() {
-                          updateColour(Gender.female);
+                          selectedGender = Gender.female;
                         });
                       },
                       child: ReusableCard(
-                        colour: femaleCardColour,
+                        colour: selectedGender == Gender.female
+                            ? activeCardColour
+                            : inactiveCardColour,
                         cardChild: IconContent(
-                            FontAwesomeIcons.venus, 'FEMALE', femaleTextColour),
+                            FontAwesomeIcons.venus,
+                            'FEMALE',
+                            selectedGender == Gender.female
+                                ? activeTextColour
+                                : inactiveTextColour),
                       ),
                     ),
                   )
