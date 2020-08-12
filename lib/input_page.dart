@@ -9,9 +9,10 @@ enum Gender {
   male,
 }
 
-Gender selectedGender = Gender.female;
+Gender selectedGender = Gender.male;
 int currentHeightValue = kSliderStartingValue.round();
-int weight = 65;
+int weight = 70;
+int age = 25;
 
 class InputPage extends StatefulWidget {
   @override
@@ -200,7 +201,46 @@ class _InputPageState extends State<InputPage> {
                     width: 8.0,
                   ),
                   Expanded(
-                    child: ReusableCard(colour: kActiveCardColour),
+                    child: ReusableCard(
+                      colour: kActiveCardColour,
+                      cardChild: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            'AGE',
+                            style: kLabelTextStyle,
+                          ),
+                          Text(
+                            age.toString(),
+                            style: kNumberTextStyle,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              RoundIconButton(
+                                icon: Icons.remove,
+                                onPressed: () {
+                                  setState(() {
+                                    age--;
+                                  });
+                                },
+                              ),
+                              SizedBox(
+                                width: 20.0,
+                              ),
+                              RoundIconButton(
+                                icon: Icons.add,
+                                onPressed: () {
+                                  setState(() {
+                                    age++;
+                                  });
+                                },
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
                   )
                 ],
               ),
