@@ -2,13 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reusable_card.dart';
 import 'icon_content.dart';
-
-const activeCardColour = Color(0xFF1C2033);
-const inactiveCardColour = Color(0xFF131528);
-const activeTextColour = Colors.white;
-const inactiveTextColour = Color(0xFF797b84);
-const bottomBarColour = Colors.pink;
-const bottomBarHeight = 100.0;
+import 'constants.dart';
 
 enum Gender {
   female,
@@ -40,14 +34,14 @@ class _InputPageState extends State<InputPage> {
                   Expanded(
                     child: ReusableCard(
                       colour: selectedGender == Gender.male
-                          ? activeCardColour
-                          : inactiveCardColour,
+                          ? kActiveCardColour
+                          : kInactiveCardColour,
                       cardChild: IconContent(
                           FontAwesomeIcons.mars,
                           'MALE',
                           selectedGender == Gender.male
-                              ? activeTextColour
-                              : inactiveTextColour),
+                              ? kActiveTextColour
+                              : kInactiveTextColour),
                       onPress: () {
                         setState(() {
                           selectedGender = Gender.male;
@@ -66,14 +60,14 @@ class _InputPageState extends State<InputPage> {
                         });
                       },
                       colour: selectedGender == Gender.female
-                          ? activeCardColour
-                          : inactiveCardColour,
+                          ? kActiveCardColour
+                          : kInactiveCardColour,
                       cardChild: IconContent(
                           FontAwesomeIcons.venus,
                           'FEMALE',
                           selectedGender == Gender.female
-                              ? activeTextColour
-                              : inactiveTextColour),
+                              ? kActiveTextColour
+                              : kInactiveTextColour),
                     ),
                   )
                 ],
@@ -86,7 +80,14 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    child: ReusableCard(colour: activeCardColour),
+                    child: ReusableCard(
+                      colour: kActiveCardColour,
+                      cardChild: IconContent(
+                        FontAwesomeIcons.venus,
+                        'HEIGHT',
+                        kActiveTextColour,
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -98,13 +99,13 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    child: ReusableCard(colour: activeCardColour),
+                    child: ReusableCard(colour: kActiveCardColour),
                   ),
                   SizedBox(
                     width: 8.0,
                   ),
                   Expanded(
-                    child: ReusableCard(colour: activeCardColour),
+                    child: ReusableCard(colour: kActiveCardColour),
                   )
                 ],
               ),
@@ -113,14 +114,14 @@ class _InputPageState extends State<InputPage> {
         ),
       ),
       bottomNavigationBar: SizedBox(
-        height: bottomBarHeight,
+        height: kBottomBarHeight,
         width: double.infinity,
         child: RaisedButton(
           padding: EdgeInsets.all(0.0),
           onPressed: null,
           child: Container(
             decoration: BoxDecoration(
-              color: bottomBarColour,
+              color: kBottomBarColour,
             ),
             child: Center(
               child: Text(
