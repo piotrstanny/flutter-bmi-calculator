@@ -16,3 +16,15 @@ const kLabelFontLetterSpacing = 1.5;
 const kSliderStartingValue = 180.0;
 const kSliderMinValue = 100.0;
 const kSliderMaxValue = 230.0;
+
+// Styles of some elements
+const kNumberTextStyle = TextStyle(
+    fontSize: kLargeTextSize,
+    color: kActiveTextColour,
+    fontWeight: kLabelFontWeight);
+
+const kLabelTextStyle = TextStyle(
+    color: kInactiveTextColour,
+    fontSize: kLabelFontSize,
+    fontWeight: kLabelFontWeight,
+    letterSpacing: kLabelFontLetterSpacing);

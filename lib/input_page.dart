@@ -88,11 +88,7 @@ class _InputPageState extends State<InputPage> {
                         children: <Widget>[
                           Text(
                             'HEIGHT',
-                            style: TextStyle(
-                                color: kInactiveTextColour,
-                                fontSize: kLabelFontSize,
-                                fontWeight: kLabelFontWeight,
-                                letterSpacing: kLabelFontLetterSpacing),
+                            style: kLabelTextStyle,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -101,18 +97,11 @@ class _InputPageState extends State<InputPage> {
                             children: <Widget>[
                               Text(
                                 currentHeightValue.toString(),
-                                style: TextStyle(
-                                    fontSize: kLargeTextSize,
-                                    color: kActiveTextColour,
-                                    fontWeight: kLabelFontWeight),
+                                style: kNumberTextStyle,
                               ),
                               Text(
                                 'cm',
-                                style: TextStyle(
-                                    color: kInactiveTextColour,
-                                    fontSize: kLabelFontSize,
-                                    fontWeight: kLabelFontWeight,
-                                    letterSpacing: kLabelFontLetterSpacing),
+                                style: kLabelTextStyle,
                               ),
                             ],
                           ),
@@ -154,7 +143,29 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    child: ReusableCard(colour: kActiveCardColour),
+                    child: ReusableCard(
+                      colour: kActiveCardColour,
+                      cardChild: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            'WEIGHT',
+                            style: kLabelTextStyle,
+                          ),
+                          Text(
+                            '82',
+                            style: kNumberTextStyle,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Icon(FontAwesomeIcons.minusCircle),
+                              Icon(FontAwesomeIcons.plusCircle)
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
                   ),
                   SizedBox(
                     width: 8.0,
