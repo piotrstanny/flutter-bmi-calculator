@@ -10,6 +10,7 @@ enum Gender {
 }
 
 Gender selectedGender = Gender.female;
+int currentHeightValue = kSliderStartingValue.round();
 
 class InputPage extends StatefulWidget {
   @override
@@ -99,9 +100,9 @@ class _InputPageState extends State<InputPage> {
                             textBaseline: TextBaseline.alphabetic,
                             children: <Widget>[
                               Text(
-                                '180',
+                                currentHeightValue.toString(),
                                 style: TextStyle(
-                                    fontSize: 80.0,
+                                    fontSize: kLargeTextSize,
                                     color: kActiveTextColour,
                                     fontWeight: kLabelFontWeight),
                               ),
@@ -114,7 +115,21 @@ class _InputPageState extends State<InputPage> {
                                     letterSpacing: kLabelFontLetterSpacing),
                               ),
                             ],
-                          )
+                          ),
+                          Slider(
+                            onChanged: (double value) {
+                              setState(() {
+                                currentHeightValue = value.round();
+                              });
+                            },
+                            value: currentHeightValue.toDouble(),
+                            min: kSliderMinValue,
+                            max: kSliderMaxValue,
+                            divisions:
+                                (kSliderMaxValue - kSliderMinValue).round(),
+                            activeColor: kBottomBarColour,
+                            inactiveColor: kInactiveTextColour,
+                          ),
                         ],
                       ),
                     ),
