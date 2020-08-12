@@ -116,19 +116,29 @@ class _InputPageState extends State<InputPage> {
                               ),
                             ],
                           ),
-                          Slider(
-                            onChanged: (double value) {
-                              setState(() {
-                                currentHeightValue = value.round();
-                              });
-                            },
-                            value: currentHeightValue.toDouble(),
-                            min: kSliderMinValue,
-                            max: kSliderMaxValue,
-                            divisions:
-                                (kSliderMaxValue - kSliderMinValue).round(),
-                            activeColor: kBottomBarColour,
-                            inactiveColor: kInactiveTextColour,
+                          SliderTheme(
+                            data: SliderTheme.of(context).copyWith(
+                              thumbColor: kBottomBarColour,
+                              activeTrackColor: Colors.white,
+                              inactiveTrackColor: kInactiveTextColour,
+                              overlayColor: Color(0x29EB1555),
+                              thumbShape: RoundSliderThumbShape(
+                                  enabledThumbRadius: 20.0),
+                              overlayShape:
+                                  RoundSliderOverlayShape(overlayRadius: 34.0),
+                            ),
+                            child: Slider(
+                              onChanged: (double value) {
+                                setState(() {
+                                  currentHeightValue = value.round();
+                                });
+                              },
+                              value: currentHeightValue.toDouble(),
+                              min: kSliderMinValue,
+                              max: kSliderMaxValue,
+                              divisions:
+                                  (kSliderMaxValue - kSliderMinValue).round(),
+                            ),
                           ),
                         ],
                       ),
