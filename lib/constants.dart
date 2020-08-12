@@ -13,7 +13,7 @@ const kLabelFontWeight = FontWeight.bold;
 const kLabelFontLetterSpacing = 1.5;
 
 // Height Slider card values:
-const kSliderStartingValue = 180.0;
+const kSliderStartingValue = 165.0;
 const kSliderMinValue = 100.0;
 const kSliderMaxValue = 230.0;
 
