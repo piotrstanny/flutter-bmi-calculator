@@ -82,10 +82,40 @@ class _InputPageState extends State<InputPage> {
                   Expanded(
                     child: ReusableCard(
                       colour: kActiveCardColour,
-                      cardChild: IconContent(
-                        FontAwesomeIcons.venus,
-                        'HEIGHT',
-                        kActiveTextColour,
+                      cardChild: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            'HEIGHT',
+                            style: TextStyle(
+                                color: kInactiveTextColour,
+                                fontSize: kLabelFontSize,
+                                fontWeight: kLabelFontWeight,
+                                letterSpacing: kLabelFontLetterSpacing),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.baseline,
+                            textBaseline: TextBaseline.alphabetic,
+                            children: <Widget>[
+                              Text(
+                                '180',
+                                style: TextStyle(
+                                    fontSize: 80.0,
+                                    color: kActiveTextColour,
+                                    fontWeight: kLabelFontWeight),
+                              ),
+                              Text(
+                                'cm',
+                                style: TextStyle(
+                                    color: kInactiveTextColour,
+                                    fontSize: kLabelFontSize,
+                                    fontWeight: kLabelFontWeight,
+                                    letterSpacing: kLabelFontLetterSpacing),
+                              ),
+                            ],
+                          )
+                        ],
                       ),
                     ),
                   ),
