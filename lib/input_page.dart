@@ -173,13 +173,22 @@ class _InputPageState extends State<InputPage> {
                             children: <Widget>[
                               RoundIconButton(
                                 icon: Icons.remove,
+                                onPressed: () {
+                                  setState(() {
+                                    weight--;
+                                  });
+                                },
                               ),
                               SizedBox(
                                 width: 20.0,
                               ),
                               RoundIconButton(
                                 icon: Icons.add,
-                                //onPressed: ,
+                                onPressed: () {
+                                  setState(() {
+                                    weight++;
+                                  });
+                                },
                               ),
                             ],
                           )
