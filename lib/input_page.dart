@@ -11,6 +11,7 @@ enum Gender {
 
 Gender selectedGender = Gender.female;
 int currentHeightValue = kSliderStartingValue.round();
+int weight = 65;
 
 class InputPage extends StatefulWidget {
   @override
@@ -152,9 +153,20 @@ class _InputPageState extends State<InputPage> {
                             'WEIGHT',
                             style: kLabelTextStyle,
                           ),
-                          Text(
-                            '82',
-                            style: kNumberTextStyle,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.baseline,
+                            textBaseline: TextBaseline.alphabetic,
+                            children: <Widget>[
+                              Text(
+                                weight.toString(),
+                                style: kNumberTextStyle,
+                              ),
+                              Text(
+                                'kg',
+                                style: kLabelTextStyle,
+                              )
+                            ],
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
