@@ -4,6 +4,10 @@ import 'constants.dart';
 import 'bottom_button.dart';
 
 class ResultsPage extends StatelessWidget {
+  ResultsPage({@required this.bmiResult});
+
+  final String bmiResult;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +43,7 @@ class ResultsPage extends StatelessWidget {
                         style: kResultTitleStyle,
                       ),
                       Text(
-                        '25.3',
+                        bmiResult,
                         style: kResultNoStyle,
                         textAlign: TextAlign.center,
                       ),
