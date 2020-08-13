@@ -29,3 +29,26 @@ const kLabelTextStyle = TextStyle(
     fontSize: kLabelFontSize,
     fontWeight: kLabelFontWeight,
     letterSpacing: kLabelFontLetterSpacing);
+
+const kResultTitleStyle = TextStyle(
+    color: Colors.green,
+    fontSize: kLabelFontSize,
+    fontWeight: kLabelFontWeight,
+    letterSpacing: kLabelFontLetterSpacing);
+
+const kPageTitleStyle = TextStyle(
+  fontSize: 40.0,
+  color: kActiveTextColour,
+  fontWeight: kLabelFontWeight,
+);
+
+const kResultNoStyle = TextStyle(
+  fontSize: 80.0,
+  color: kActiveTextColour,
+  fontWeight: kLabelFontWeight,
+);
+
+const kResultDescStyle = TextStyle(
+  color: kActiveTextColour,
+  fontSize: kLabelFontSize,
+);
