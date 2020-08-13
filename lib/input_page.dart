@@ -2,16 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reusable_card.dart';
 import 'icon_content.dart';
+import 'round_icon_button.dart';
 import 'constants.dart';
+import 'bottom_button.dart';
 
 enum Gender {
   female,
   male,
 }
 
-Gender selectedGender = Gender.male;
+Gender selectedGender = Gender.female;
 int currentHeightValue = kSliderStartingValue.round();
-int weight = 70;
+int weight = 65;
 int age = 25;
 
 class InputPage extends StatefulWidget {
@@ -28,7 +30,7 @@ class _InputPageState extends State<InputPage> {
         title: Text('BMI CALCULATOR'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: kPagePadding,
         child: Column(
           children: <Widget>[
             Expanded(
@@ -248,54 +250,12 @@ class _InputPageState extends State<InputPage> {
           ],
         ),
       ),
-      bottomNavigationBar: SizedBox(
-        height: kBottomBarHeight,
-        width: double.infinity,
-        child: RaisedButton(
-          padding: EdgeInsets.all(0.0),
-          onPressed: null,
-          child: Container(
-            decoration: BoxDecoration(
-              color: kBottomBarColour,
-            ),
-            child: Center(
-              child: Text(
-                'CALCULATE  YOUR  BMI',
-                style: TextStyle(
-                  fontSize: 20.0,
-                  letterSpacing: 1.5,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-          ),
-        ),
+      bottomNavigationBar: BottomButton(
+        onTap: () {
+          Navigator.pushNamed(context, '/result');
+        },
+        title: 'CALCULATE  YOUR  BMI',
       ),
-    );
-  }
-}
-
-class RoundIconButton extends StatelessWidget {
-  final IconData icon;
-  final Function onPressed;
-
-  RoundIconButton({@required this.icon, @required this.onPressed});
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      onPressed: onPressed,
-      child: Icon(
-        icon,
-        color: kActiveTextColour,
-      ),
-      constraints: BoxConstraints.tightFor(
-        width: 56.0,
-        height: 56.0,
-      ),
-      elevation: 0.0,
-      shape: CircleBorder(),
-      fillColor: Color(0xFF272c44),
     );
   }
 }

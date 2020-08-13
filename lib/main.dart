@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bmi_calculator/results_page.dart';
 import 'input_page.dart';
 
 void main() {
@@ -16,7 +17,11 @@ class MyApp extends StatelessWidget {
         canvasColor: Colors.pink,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: InputPage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => InputPage(),
+        '/result': (context) => ResultsPage()
+      },
     );
   }
 }
