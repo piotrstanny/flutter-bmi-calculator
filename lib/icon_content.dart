@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'constants.dart';
 
 class IconContent extends StatelessWidget {
   final IconData faicon;
@@ -22,10 +23,10 @@ class IconContent extends StatelessWidget {
         Text(
           iconText,
           style: TextStyle(
-            fontSize: 20.0,
+            fontSize: kLabelFontSize,
             color: textColour,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 1.5,
+            fontWeight: kLabelFontWeight,
+            letterSpacing: kLabelFontLetterSpacing,
           ),
         )
       ],
