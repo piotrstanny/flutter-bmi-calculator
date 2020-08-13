@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+const kPagePadding = EdgeInsets.all(20.0);
 // Card's elements styling values:
 const kActiveCardColour = Color(0xFF1C2033);
 const kInactiveCardColour = Color(0xFF131528);

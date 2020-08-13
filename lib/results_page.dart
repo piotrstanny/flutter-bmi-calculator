@@ -9,22 +9,39 @@ class ResultsPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('BMI CALCULATOR'),
       ),
-      body: Column(
-//        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          Expanded(
-            child: Container(
-              child: Text(
-                'Your Result',
-                style: kNumberTextStyle,
+      body: Padding(
+        padding: kPagePadding,
+        child: Column(
+          children: <Widget>[
+            Expanded(
+              child: Container(
+                child: Text(
+                  'Your Result',
+                  style: kNumberTextStyle,
+                ),
               ),
             ),
-          ),
-          Expanded(
-            flex: 5,
-            child: ReusableCard(colour: kActiveCardColour),
-          ),
-        ],
+            Expanded(
+              flex: 5,
+              child: ReusableCard(
+                colour: kActiveCardColour,
+                cardChild: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Text(
+                      'Normal',
+                      textAlign: TextAlign.center,
+                    ),
+                    Text('25.3'),
+                    Text('Optimal BMI range:\n18.5 - 20.0'),
+                    Text('You have the right weight. Good job!')
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
