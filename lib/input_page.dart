@@ -251,20 +251,26 @@ class _InputPageState extends State<InputPage> {
       bottomNavigationBar: SizedBox(
         height: kBottomBarHeight,
         width: double.infinity,
-        child: RaisedButton(
-          padding: EdgeInsets.all(0.0),
-          onPressed: null,
-          child: Container(
-            decoration: BoxDecoration(
-              color: kBottomBarColour,
-            ),
-            child: Center(
-              child: Text(
-                'CALCULATE  YOUR  BMI',
-                style: TextStyle(
-                  fontSize: 20.0,
-                  letterSpacing: 1.5,
-                  color: Colors.white,
+        child: GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, '/result');
+          },
+          child: RaisedButton(
+            padding: EdgeInsets.all(0.0),
+            onPressed: null,
+            child: Container(
+              decoration: BoxDecoration(
+                color: kBottomBarColour,
+              ),
+              padding: EdgeInsets.only(bottom: 15.0),
+              child: Center(
+                child: Text(
+                  'CALCULATE  YOUR  BMI',
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    letterSpacing: 1.5,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
