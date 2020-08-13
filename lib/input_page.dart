@@ -9,9 +9,9 @@ enum Gender {
   male,
 }
 
-Gender selectedGender = Gender.male;
+Gender selectedGender = Gender.female;
 int currentHeightValue = kSliderStartingValue.round();
-int weight = 70;
+int weight = 65;
 int age = 25;
 
 class InputPage extends StatefulWidget {
