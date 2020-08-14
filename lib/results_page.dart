@@ -12,9 +12,17 @@ class ResultsPage extends StatelessWidget {
     if (bmiResult > 25.0) {
       return 'OVERWEIGHT';
     } else if (bmiResult > 18.5) {
-      return 'NORMAL';
+      return 'BMI OPTIMAL!';
     } else {
       return 'UNDERWEIGHT';
+    }
+  }
+
+  TextStyle resultStatusColour(double bmiResult) {
+    if (bmiResult < 18.5 && bmiResult > 25.0) {
+      return kResultTitleStyleRed;
+    } else {
+      return kResultTitleStyleGreen;
     }
   }
 
@@ -50,7 +58,10 @@ class ResultsPage extends StatelessWidget {
                       Text(
                         resultStatus(double.parse(bmiResult)),
                         textAlign: TextAlign.center,
-                        style: kResultTitleStyleGreen,
+                        style: double.tryParse(bmiResult) > 18.5 &&
+                                double.tryParse(bmiResult) < 25.0
+                            ? kResultTitleStyleGreen
+                            : kResultTitleStyleRed,
                       ),
                       Text(
                         bmiResult,
@@ -59,6 +70,30 @@ class ResultsPage extends StatelessWidget {
                       ),
                       Text(
                         'For most adults, and ideal BMI is between 18.5 and 25.0.\nIf your BMI is outside that range, it is not an ideal weight-to-height ratio, which may indicate underweight or overweight.',
+                        style: kResultDescStyle,
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 15.0,
+            ),
+            Expanded(
+              flex: 3,
+              child: ReusableCard(
+                colour: kActiveCardColour,
+                cardChild: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Text('Your BMR is 2056 kcal'),
+                      Text(
+                        'For most adults, and ideal BMI is between 18.5 and 25.0.',
                         style: kResultDescStyle,
                         textAlign: TextAlign.center,
                       ),
