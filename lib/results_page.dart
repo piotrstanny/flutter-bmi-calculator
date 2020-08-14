@@ -4,9 +4,10 @@ import 'constants.dart';
 import 'bottom_button.dart';
 
 class ResultsPage extends StatelessWidget {
-  ResultsPage({@required this.bmiResult});
+  ResultsPage({@required this.bmiResult, @required this.bmrResult});
 
   final String bmiResult;
+  final String bmrResult;
 
   String resultStatus(double bmiResult) {
     if (bmiResult > 25.0) {
@@ -69,7 +70,7 @@ class ResultsPage extends StatelessWidget {
                         textAlign: TextAlign.center,
                       ),
                       Text(
-                        'For most adults, and ideal BMI is between 18.5 and 25.0.\nIf your BMI is outside that range, it is not an ideal weight-to-height ratio, which may indicate underweight or overweight.',
+                        'For most adults, an ideal BMI is between 18.5 and 25.0.\nIf you\'re outside that range, it means negative weight-to-height ratio, which may indicate underweight or overweight.',
                         style: kResultDescStyle,
                         textAlign: TextAlign.center,
                       ),
@@ -91,9 +92,13 @@ class ResultsPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      Text('Your BMR is 2056 kcal'),
                       Text(
-                        'For most adults, and ideal BMI is between 18.5 and 25.0.',
+                        bmrResult,
+                        style: kPageTitleStyle,
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        'Basal Metabolic Rate kurwa moje oczy, ide spac',
                         style: kResultDescStyle,
                         textAlign: TextAlign.center,
                       ),

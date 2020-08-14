@@ -255,12 +255,13 @@ class _InputPageState extends State<InputPage> {
       bottomNavigationBar: BottomButton(
         onTap: () {
           BmiBrain bmiBrain =
-              BmiBrain(weight: weight, height: currentHeightValue);
+              BmiBrain(weight: weight, height: currentHeightValue, age: age);
           Navigator.push(
             context,
             MaterialPageRoute(
               builder: (context) => ResultsPage(
                 bmiResult: bmiBrain.calculateBmi(),
+                bmrResult: bmiBrain.calculateBmr(selectedGender),
               ),
             ),
           );
