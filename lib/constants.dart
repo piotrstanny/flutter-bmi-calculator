@@ -30,8 +30,14 @@ const kLabelTextStyle = TextStyle(
     fontWeight: kLabelFontWeight,
     letterSpacing: kLabelFontLetterSpacing);
 
-const kResultTitleStyle = TextStyle(
+const kResultTitleStyleGreen = TextStyle(
     color: Colors.green,
+    fontSize: kLabelFontSize,
+    fontWeight: kLabelFontWeight,
+    letterSpacing: kLabelFontLetterSpacing);
+
+const kResultTitleStyleRed = TextStyle(
+    color: Colors.red,
     fontSize: kLabelFontSize,
     fontWeight: kLabelFontWeight,
     letterSpacing: kLabelFontLetterSpacing);

@@ -8,6 +8,16 @@ class ResultsPage extends StatelessWidget {
 
   final String bmiResult;
 
+  String resultStatus(double bmiResult) {
+    if (bmiResult > 25.0) {
+      return 'OVERWEIGHT';
+    } else if (bmiResult > 18.5) {
+      return 'NORMAL';
+    } else {
+      return 'UNDERWEIGHT';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,9 +48,9 @@ class ResultsPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       Text(
-                        'NORMAL',
+                        resultStatus(double.parse(bmiResult)),
                         textAlign: TextAlign.center,
-                        style: kResultTitleStyle,
+                        style: kResultTitleStyleGreen,
                       ),
                       Text(
                         bmiResult,
