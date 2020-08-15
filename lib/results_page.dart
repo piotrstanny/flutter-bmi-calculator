@@ -4,6 +4,29 @@ import 'constants.dart';
 import 'bottom_button.dart';
 
 class ResultsPage extends StatelessWidget {
+  ResultsPage({@required this.bmiResult, @required this.bmrResult});
+
+  final String bmiResult;
+  final String bmrResult;
+
+  String resultStatus(double bmiResult) {
+    if (bmiResult > 25.0) {
+      return 'OVERWEIGHT';
+    } else if (bmiResult > 18.5) {
+      return 'BMI OPTIMAL!';
+    } else {
+      return 'UNDERWEIGHT';
+    }
+  }
+
+  TextStyle resultStatusColour(double bmiResult) {
+    if (bmiResult < 18.5 && bmiResult > 25.0) {
+      return kResultTitleStyleRed;
+    } else {
+      return kResultTitleStyleGreen;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,17 +57,64 @@ class ResultsPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       Text(
-                        'NORMAL',
+                        resultStatus(double.parse(bmiResult)),
                         textAlign: TextAlign.center,
-                        style: kResultTitleStyle,
+                        style: double.tryParse(bmiResult) > 18.5 &&
+                                double.tryParse(bmiResult) < 25.0
+                            ? kResultTitleStyleGreen
+                            : kResultTitleStyleRed,
                       ),
                       Text(
-                        '25.3',
+                        bmiResult,
                         style: kResultNoStyle,
                         textAlign: TextAlign.center,
                       ),
                       Text(
-                        'For most adults, and ideal BMI is between 18.5 and 25.0.\nIf your BMI is outside that range, it is not an ideal weight-to-height ratio, which may indicate underweight or overweight.',
+                        'For most adults, an ideal BMI is between 18.5 and 25.0.\nIf you\'re outside that range, it means negative weight-to-height ratio, which may indicate underweight or overweight.',
+                        style: kResultDescStyle,
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 15.0,
+            ),
+            Expanded(
+              flex: 3,
+              child: ReusableCard(
+                colour: kActiveCardColour,
+                cardChild: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Text(
+                        'Your BMR is:',
+                        style: kResultDescStyle,
+                        textAlign: TextAlign.center,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.baseline,
+                        textBaseline: TextBaseline.alphabetic,
+                        children: <Widget>[
+                          Text(
+                            bmrResult,
+                            style: kPageTitleStyle,
+                            textAlign: TextAlign.center,
+                          ),
+                          Text(
+                            'kcal',
+                            style: kLabelTextStyle,
+                          )
+                        ],
+                      ),
+                      Text(
+                        'Basal Metabolic Rate is the number of calories required to perform basic, life-sustaining functions.',
                         style: kResultDescStyle,
                         textAlign: TextAlign.center,
                       ),
