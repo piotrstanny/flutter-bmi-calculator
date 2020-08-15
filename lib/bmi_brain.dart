@@ -21,12 +21,12 @@ class BmiBrain {
     double weightLbs = weight * 2.2;
     double heightInch = height / 100 * 39.0;
     if (selectedGender == Gender.male) {
-//      66+(6.23*weight)+(12.7*height)-(6.8*age)
-      _bmr = 66 + (6.23 * weightLbs) + (12.7 * heightInch) - (6.8 * age);
+//      13.7516*weight + 5.0033*height - 6.755*age + 66.473
+      _bmr = 13.7516 * weight + 5.0033 * height - 6.755 * age + 66.473;
       return _bmr.toStringAsFixed(1);
     } else {
-//      655+(4.35*weight)+(4.7*height)-(4.7*age)
-      _bmr = 655 + (4.35 * weightLbs) + (4.7 * heightInch) - (4.7 * age);
+//      =9.5634*weight + 1.8496*height - 4.6756*age + 655.0955
+      _bmr = 9.5634 * weight + 1.8496 * height - 4.6756 * age + 655.0955;
       return _bmr.toStringAsFixed(1);
     }
   }

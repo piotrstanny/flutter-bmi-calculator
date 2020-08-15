@@ -93,12 +93,28 @@ class ResultsPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       Text(
-                        bmrResult,
-                        style: kPageTitleStyle,
+                        'Your BMR is:',
+                        style: kResultDescStyle,
                         textAlign: TextAlign.center,
                       ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.baseline,
+                        textBaseline: TextBaseline.alphabetic,
+                        children: <Widget>[
+                          Text(
+                            bmrResult,
+                            style: kPageTitleStyle,
+                            textAlign: TextAlign.center,
+                          ),
+                          Text(
+                            'kcal',
+                            style: kLabelTextStyle,
+                          )
+                        ],
+                      ),
                       Text(
-                        'Basal Metabolic Rate kurwa moje oczy, ide spac',
+                        'Basal Metabolic Rate is the number of calories required to perform basic, life-sustaining functions.',
                         style: kResultDescStyle,
                         textAlign: TextAlign.center,
                       ),
