@@ -19,12 +19,11 @@ class BottomButton extends StatelessWidget {
           decoration: BoxDecoration(
             color: kBottomBarColour,
           ),
-          padding: EdgeInsets.only(bottom: 15.0),
           child: Center(
             child: Text(
               title,
               style: TextStyle(
-                fontSize: 20.0,
+                fontSize: 18.0,
                 letterSpacing: 1.5,
                 color: Colors.white,
               ),

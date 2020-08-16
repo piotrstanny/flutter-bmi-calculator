@@ -29,13 +29,17 @@ class _InputPageState extends State<InputPage> {
     // This method is rerun every time setState is called
     return Scaffold(
       appBar: AppBar(
-        title: Text('BMI CALCULATOR'),
+        title: Text(
+          'BMI CALCULATOR',
+          textAlign: TextAlign.center,
+        ),
       ),
       body: Padding(
         padding: kPagePadding,
         child: Column(
           children: <Widget>[
             Expanded(
+              flex: 2,
               child: Row(
                 children: <Widget>[
                   Expanded(
@@ -81,9 +85,10 @@ class _InputPageState extends State<InputPage> {
               ),
             ),
             SizedBox(
-              height: 20.0,
+              height: 15.0,
             ),
             Expanded(
+              flex: 3,
               child: Row(
                 children: <Widget>[
                   Expanded(
@@ -143,9 +148,10 @@ class _InputPageState extends State<InputPage> {
               ),
             ),
             SizedBox(
-              height: 20.0,
+              height: 15.0,
             ),
             Expanded(
+              flex: 3,
               child: Row(
                 children: <Widget>[
                   Expanded(
