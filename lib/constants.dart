@@ -7,9 +7,9 @@ const kInactiveCardColour = Color(0xFF131528);
 const kActiveTextColour = Colors.white;
 const kInactiveTextColour = Color(0xFF797b84);
 const kBottomBarColour = Colors.pink;
-const kBottomBarHeight = 100.0;
-const kLabelFontSize = 20.0;
-const kLargeTextSize = 60.0;
+const kBottomBarHeight = 60.0;
+const kLabelFontSize = 14.0;
+const kLargeTextSize = 36.0;
 const kLabelFontWeight = FontWeight.bold;
 const kLabelFontLetterSpacing = 1.5;
 
@@ -43,13 +43,13 @@ const kResultTitleStyleRed = TextStyle(
     letterSpacing: kLabelFontLetterSpacing);
 
 const kPageTitleStyle = TextStyle(
-  fontSize: 40.0,
+  fontSize: 28.0,
   color: kActiveTextColour,
   fontWeight: kLabelFontWeight,
 );
 
 const kResultNoStyle = TextStyle(
-  fontSize: 80.0,
+  fontSize: 50.0,
   color: kActiveTextColour,
   fontWeight: kLabelFontWeight,
 );

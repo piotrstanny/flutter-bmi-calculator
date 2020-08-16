@@ -15,10 +15,10 @@ class IconContent extends StatelessWidget {
         Icon(
           faicon,
           color: textColour,
-          size: 90.0,
+          size: 50.0,
         ),
         SizedBox(
-          height: 10.0,
+          height: 6.0,
         ),
         Text(
           iconText,
