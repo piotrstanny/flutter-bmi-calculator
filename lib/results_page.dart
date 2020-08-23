@@ -19,14 +19,6 @@ class ResultsPage extends StatelessWidget {
     }
   }
 
-  TextStyle resultStatusColour(double bmiResult) {
-    if (bmiResult < 18.5 && bmiResult > 25.0) {
-      return kResultTitleStyleRed;
-    } else {
-      return kResultTitleStyleGreen;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +52,7 @@ class ResultsPage extends StatelessWidget {
                         resultStatus(double.parse(bmiResult)),
                         textAlign: TextAlign.center,
                         style: double.tryParse(bmiResult) > 18.5 &&
-                                double.tryParse(bmiResult) < 25.0
+                                double.tryParse(bmiResult) <= 25.0
                             ? kResultTitleStyleGreen
                             : kResultTitleStyleRed,
                       ),
