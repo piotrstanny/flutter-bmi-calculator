@@ -2,7 +2,7 @@
 
 Flutter Mobile App - beautiful UI app allowing you to calculate your BMI and BMR fitness indicators. Design inspired by Ruben Vaalt mock-up found on Dribble.com, showing how flexible is Flutter SDK.
 
-![Flutter BMI Calculator Demo](https://media.giphy.com/media/eJuPecJoLXJdcw3Jul/giphy.gif) - Inspired by: ![Dribble app design by Ruben Vaalt](mock-up.png)
+![Flutter BMI Calculator Demo](https://media.giphy.com/media/eJuPecJoLXJdcw3Jul/giphy.gif) - from: ![Dribble app design by Ruben Vaalt](mock-up.png)
 
 
 
